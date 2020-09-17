@@ -1,6 +1,6 @@
 ![Black Logo](https://raw.githubusercontent.com/psf/black/master/docs/_static/logo2-readme.png)
 
-<h2 align="center">The Uncompromising Code Formatter</h2>
+<h2 align="center">The Uncompromising Code Formatter with Rebecca Black Lyrics</h2>
 
 <p align="center">
 <a href="https://travis-ci.com/psf/black"><img alt="Build Status" src="https://travis-ci.com/psf/black.svg?branch=master"></a>
@@ -16,6 +16,9 @@
 </p>
 
 > “Any color you like.”
+
+This is a fork of the black project, only slightly modified to print out lyrics from the
+Rebecca Black song `Friday` with each run. https://www.youtube.com/watch?v=kfVsfOSbJY0
 
 _Black_ is the uncompromising Python code formatter. By using it, you agree to cede
 control over minutiae of hand-formatting. In return, _Black_ gives you speed,

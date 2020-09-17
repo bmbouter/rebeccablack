@@ -14,6 +14,7 @@ from multiprocessing import Manager, freeze_support
 import os
 from pathlib import Path
 import pickle
+import random
 import regex as re
 import signal
 import sys
@@ -184,6 +185,81 @@ class TargetVersion(Enum):
 
 
 PY36_VERSIONS = {TargetVersion.PY36, TargetVersion.PY37, TargetVersion.PY38}
+
+FRIDAY_LYRICS = """Oo-ooh-ooh, hoo yeah, yeah
+Yeah, yeah
+Yeah, yeah, yeah
+Seven a.m., waking up in the morning
+Gotta be fresh, gotta go downstairs
+Gotta have my bowl, gotta have cereal
+Seein' everything, the time is goin'
+Tickin' on and on, everybody's rushin'
+Gotta get down to the bus stop
+Gotta catch my bus, I see my friends (My friends)
+Kickin' in the front seat
+Sittin' in the back seat
+Gotta make my mind up
+Which seat can I take?
+It's Friday, Friday
+Gotta get down on Friday
+Everybody's lookin' forward to the weekend, weekend
+Friday, Friday
+Gettin' down on Friday
+Everybody's lookin' forward to the weekend
+Partyin', partyin' (Yeah)
+Partyin', partyin' (Yeah)
+Fun, fun, fun, fun
+Lookin' forward to the weekend
+7: 45, we're drivin' on the highway
+Cruisin' so fast, I want time to fly
+Fun, fun, think about fun
+You know what it is
+I got this, you got this
+My friend is by my right, ay
+I got this, you got this
+Now you know it
+Kickin' in the front seat
+Sittin' in the back seat
+Gotta make my mind up
+Which seat can I take?
+It's Friday, Friday
+Gotta get down on Friday
+Everybody's lookin' forward to the weekend, weekend
+Friday, Friday
+Gettin' down on Friday
+Everybody's lookin' forward to the weekend
+Partyin', partyin' (Yeah)
+Partyin', partyin' (Yeah)
+Fun, fun, fun, fun
+Lookin' forward to the weekend
+Yesterday was Thursday, Thursday
+Today i-is Friday, Friday (Partyin')
+We-we-we so excited
+We so excited
+We gonna have a ball today
+Tomorrow is Saturday
+And Sunday comes after ... wards
+I don't want this weekend to end
+It's Friday, Friday
+Gotta get down on Friday
+Everybody's lookin' forward to the weekend, weekend
+Friday, Friday
+Gettin' down on Friday
+Everybody's lookin' forward to the weekend
+Partyin', partyin' (Yeah)
+Partyin', partyin' (Yeah)
+Fun, fun, fun, fun
+Lookin' forward to the weekend
+It's Friday, Friday
+Gotta get down on Friday
+Everybody's lookin' forward to the weekend, weekend
+Friday, Friday
+Gettin' down on Friday
+Everybody's lookin' forward to the weekend
+Partyin', partyin' (Yeah)
+Partyin', partyin' (Yeah)
+Fun, fun, fun, fun
+Lookin' forward to the weekend"""
 
 
 class Feature(Enum):
@@ -562,6 +638,7 @@ def main(
         )
 
     if verbose or not quiet:
+        out(random.choice(FRIDAY_LYRICS.splitlines()))
         out("Oh no! 💥 💔 💥" if report.return_code else "All done! ✨ 🍰 ✨")
         click.secho(str(report), err=True)
     ctx.exit(report.return_code)
